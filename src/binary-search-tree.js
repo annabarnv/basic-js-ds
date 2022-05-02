@@ -18,12 +18,21 @@ class BinarySearchTree {
     return nodes;
   }
 
-  add(/* data */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  add (data ) {
+    if (data < this.data && this.left) {
+      this.left.insert(data);
+    } else if (data < this.data) {
+      this.left = new Node(data);
+    }
+
+    if (data > this.data && this.right) {
+      this.right.insert(data);
+    } else if (data > this.data) {
+      this.right = new Node(data);
+    }
   }
 
-  has(/* data */) {
+  has(data) {
     throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
   }
